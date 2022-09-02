@@ -43,7 +43,7 @@
 <table class="table__wrapper--striped">
   <thead>
     <tr>
-      <th>ID</th>
+      <th>No</th>
       <th class="th_w_220">Name</th>
       <th>Email</th>
       <th>Address</th>
@@ -58,14 +58,14 @@
     <tbody>
       <tr>
         <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><%= link_to user.name %></td>
+        <td><%= link_to user.email %></td>
+        <td><%= link_to user.address %></td>
+        <td><%= link_to user.role == '0' ? 'Admin' : 'User' %></td>
+        <td><%= link_to user.phone %></td>
+        <td><%= link_to user.dob.strftime('%Y/%m/%d') %></td>
+        <td><%= link_to user.gender %></td>
+        <td><%= link_to user.created_at.strftime('%Y/%m/%d') %></td>
       </tr>
     </tbody>
   <% end %>
