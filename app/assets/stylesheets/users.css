@@ -1,0 +1,165 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul, li {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+q:before, q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+button {
+  outline: none;
+  border: 0;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0px;
+}
+body * {
+  font-family: NotoSansJP, sans-serif;
+}
+body footer {
+  margin-top: auto;
+}
+header.user-header {
+  width: 100%;
+  margin: 0px auto 30px;
+  text-align: center;
+}
+header.user-header .header {
+  padding: 18px;
+  background: #03b937;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #03b937;
+}
+table th, table td {
+  border: 1px solid #03b937;
+  padding: 1rem;
+}
+table tr {
+  height: 50px;
+}
+
+table th {
+  text-align: center;
+}
+.container-xl {
+  width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.form-container {
+  padding: 0 30px;
+  color: #03b937;
+}
+.form-search__label {
+  width: 20%;
+  padding: 5px;
+  background: rgba(0, 153, 126, 0.15);
+  color: #52b46f;
+}
+.form-search__input-wrapper {
+  padding: 10px;
+  line-height: 1.6;
+}
+.form-input {
+  border-radius: 3px;
+  border: 1px solid #03b937;
+  padding: 7px 10px;
+  font-size: 15px;
+  font-family: NotoSansJP, sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -ms-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.form-input.full-width {
+  width: 100%;
+}
+.form-input.s-width {
+  width: 100px;
+}
+.btn-form__wrapper {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.btn-cancel {
+  padding: 12px 32px;
+  background: #808080;
+  color: #fcfcfc;
+  border: 0px;
+  border-radius: 4px;
+  font-size: 15px;
+  transition: 0.1s;
+  text-decoration: none;
+}
+.btn-cancel:hover {
+  box-shadow: 0px 2px 4px rgba(44, 44, 44, 0.5);
+}
+.btn-submit {
+  margin-left: 10px;
+  padding: 12px 32px;
+  background: #03b937;
+  color: #fcfcfc;
+  border: 0px;
+  border-radius: 4px;
+  font-size: 15px;
+  transition: 0.1s;
+  text-decoration: none;
+  cursor: pointer;
+}
+.table__wrapper, .table__wrapper--striped {
+  width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.table__wrapper th, .table__wrapper--striped th {
+  padding: 10px 5px;
+  background: #e8f7f5;
+  color: #52b46f;
+  vertical-align: middle;
+  line-height: 1.2;
+}
+.table__wrapper--striped th.th_w_120 {
+  width: 120px;
+}

@@ -1,0 +1,73 @@
+<%= stylesheet_link_tag "users.css" %>
+<header class="user-header container-lg">
+<p class="header">User List</p>
+</header>
+<%= form_tag({ :action => :search_users }, { :method => :get }) do %>
+  <table class="container-xl form-container">
+    <tbody>
+      <tr>
+        <th class="form-search__label">Name</th>
+        <td class="form-search__input-wrapper">
+          <%= text_field_tag :name, params[:name], class: "form-input" %>
+        </td>
+        <th class="form-search__label">Email</th>
+        <td class="form-search__input-wrapper">
+          <%= text_field_tag :email, params[:email], class: "form-input" %>
+        </td>
+      </tr>
+      <tr>
+        <th class="form-search__label">Address</th>
+        <td class="form-search__input-wrapper">
+          <%= text_field_tag :address, params[:address], class: "form-input" %>
+        </td>
+        <th class="form-search__label"> Phone Number</th>
+        <td class="form-search__input-wrapper">
+          <%= text_field_tag :phone, params[:phone], class: "form-input" %>
+        </td>
+      </tr>
+      <tr>
+        <th class="form-search__label">Join Date</th>
+        <td class="form-search__input-wrapper" colspan="3">
+          <%= date_field_tag :from_date, params[:from_date], class:  "form-input", auto_complete: "off" %>
+          ~
+          <%= date_field_tag :to_date, params[:to_date], class:  "form-input", auto_complete: "off" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="btn-form__wrapper">
+    <input type="reset" value="Clear" class="btn-cancel">
+    <%= submit_tag ("Search"), class: 'btn-submit' %>
+  </div>
+<% end %>
+<table class="table__wrapper--striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th class="th_w_220">Name</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Role</th>
+      <th>Phone Number</th>
+      <th>Date Of Birth</th>
+      <th>Gender</th>
+      <th>Join Date</th>
+    </tr>
+  </thead>
+  <% @users.each do |user| %>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>
+
