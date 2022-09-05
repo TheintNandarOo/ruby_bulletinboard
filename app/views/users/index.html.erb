@@ -2,6 +2,9 @@
 <header class="user-header container-lg">
 <p class="header">User List</p>
 </header>
+<div class="container-xl btn-function__wrapper">
+  <%= link_to '<button type="button" class="btn-function">Create</button>'.html_safe, new_user_path %>
+</div>
 <%= form_tag({ :action => :search_users }, { :method => :get }) do %>
   <table class="container-xl form-container">
     <tbody>
@@ -52,20 +55,22 @@
       <th>Date Of Birth</th>
       <th>Gender</th>
       <th>Join Date</th>
+      <th colspan="2">Action</th>
     </tr>
   </thead>
   <% @users.each do |user| %>
     <tbody>
       <tr>
-        <td></td>
-        <td><%= link_to user.name %></td>
-        <td><%= link_to user.email %></td>
-        <td><%= link_to user.address %></td>
-        <td><%= link_to user.role == '0' ? 'Admin' : 'User' %></td>
-        <td><%= link_to user.phone %></td>
-        <td><%= link_to user.dob.strftime('%Y/%m/%d') %></td>
-        <td><%= link_to user.gender %></td>
-        <td><%= link_to user.created_at.strftime('%Y/%m/%d') %></td>
+        <td><%= user.id %></td>
+        <td><%= link_to user.name, user %></td>
+        <td><%= user.email %></td>
+        <td><%= user.address %></td>
+        <td><%= user.role == '0' ? 'Admin' : 'User' %></td>
+        <td><%= user.phone %></td>
+        <td><%= user.dob.strftime('%Y/%m/%d') %></td>
+        <td><%= user.gender == '0' ? 'Male' : 'Female' %></td>
+        <td><%= user.created_at.strftime('%Y/%m/%d') %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     </tbody>
   <% end %>
