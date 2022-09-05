@@ -61,9 +61,9 @@
 			<tr>
 				<th class="form-search__label required">Date Of Birth</th>
 				<td class="form-search__input-wrapper">
-					<%= form.date_field :date_of_birth, class:"form-input" %>
-					<% if @user.errors[:date_of_birth].any? %>
-						<span class="form__msg-warning mt-2">Date Of Birth <%= @user.errors[:date_of_birth][0] %>
+					<%= form.date_field :dob, class:"form-input" %>
+					<% if @user.errors[:dob].any? %>
+						<span class="form__msg-warning mt-2">Date Of Birth <%= @user.errors[:dob][0] %>
 					<% end %>
 				</td>
 			</tr>
