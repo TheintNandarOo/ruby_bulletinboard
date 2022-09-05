@@ -79,10 +79,10 @@
 			<tr>
 				<th class="form-search__label required">Role</th>
 				<td class="form-search__input-wrapper">
-				<%= form.select(:role, options_for_select(Constants::ROLES), {}, {:class => "form-input rect-select"})%>
-				<% if @user.errors[:role].any? %>
-					<span class="form__msg-warning mt-2">Role <%= @user.errors[:role][0] %>
-				<% end %>
+					<%= form.select(:role, options_for_select([["Admin", "0"], ["User", "1"]]), {}, {:class => "form-input rect-select"})%>
+					<% if @user.errors[:role].any? %>
+						<span class="form__msg-warning mt-2">Role <%= @user.errors[:role][0] %>
+					<% end %>
 				</td>
 			</tr>
 			<%= form.hidden_field :created_id, :value => '1'%>

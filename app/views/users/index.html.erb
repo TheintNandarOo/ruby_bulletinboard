@@ -75,4 +75,19 @@
     </tbody>
   <% end %>
 </table>
-
+<script>
+  $(document).ready(function () {
+    $('input[type=reset]').click(function(event){
+      event.preventDefault();
+      resetForm();
+    });
+  });
+  function resetForm(){
+    $('input[ name=name]').val('');
+    $('input[ name=email]').val('');
+    $('input[ name=address]').val('');
+    $('input[ name=phone]').val('');
+    $('input[ name=from_date]').val('');
+    $('input[ name=to_date]').val('');
+  }
+</script>
