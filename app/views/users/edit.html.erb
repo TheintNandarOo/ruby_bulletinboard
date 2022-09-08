@@ -1,13 +1,13 @@
+<header class="user-header container-lg">
+	<p class="header">Edit User</p>
+</header>
 <%= form_with model: @user do |form| %>
-	<header class="user-header container-lg">
-		<p class="header">Create User</p>
-	</header>
 	<table class="container form-container">
 		<tbody>
 			<tr>
 				<th class="form-search__label required">Name</th>
 				<td class="form-search__input-wrapper">
-					<%= form.text_field :name, class:"form-input" %>
+					<%= form.text_field :name, class:"form-input", :value => @user.name %>
 					<% if @user.errors[:name].any? %>
 						<span class="form__msg-warning mt-2">Name <%= @user.errors[:name][0] %>
 					<% end %>
@@ -16,34 +16,16 @@
 			<tr>
 				<th class="form-search__label required">Email</th>
 				<td class="form-search__input-wrapper">
-					<%= form.text_field :email, class:"form-input" %>
+					<%= form.text_field :email, class:"form-input", :value => @user.email %>
 					<% if @user.errors[:email].any? %>
 						<span class="form__msg-warning mt-2">Email <%= @user.errors[:email][0] %>
 					<% end %>
 				</td>
 			</tr>
 			<tr>
-				<th class="form-search__label required">Password</th>
-				<td class="form-search__input-wrapper">
-					<%= form.password_field :password, class:"form-input" %>
-					<% if @user.errors[:password].any? %>
-						<span class="form__msg-warning mt-2">Password <%= @user.errors[:password][0] %>
-					<% end %>
-				</td>
-			</tr>
-			<tr>
-				<th class="form-search__label required">Confirm Password</th>
-				<td class="form-search__input-wrapper">
-					<%= form.password_field :confirm_password, class:"form-input" %>
-					<% if @user.errors[:confirm_password].any? %>
-						<span class="form__msg-warning mt-2">Confirm Password <%= @user.errors[:confirm_password][0] %>
-					<% end %>
-				</td>
-			</tr>
-			<tr>
 				<th class="form-search__label required">Address</th>
 				<td class="form-search__input-wrapper">
-					<%= form.text_field :address, class:"form-input" %>
+					<%= form.text_field :address, class:"form-input", :value => @user.address %>
 					<% if @user.errors[:address].any? %>
 						<span class="form__msg-warning mt-2">Address <%= @user.errors[:address][0] %>
 					<% end %>
@@ -52,7 +34,7 @@
 			<tr>
 				<th class="form-search__label required">Phone</th>
 				<td class="form-search__input-wrapper">
-					<%= form.number_field :phone, class:"form-input" %>
+					<%= form.number_field :phone, class:"form-input", :value => @user.phone %>
 					<% if @user.errors[:phone].any? %>
 						<span class="form__msg-warning mt-2">Phone <%= @user.errors[:phone][0] %>
 					<% end %>
@@ -61,7 +43,7 @@
 			<tr>
 				<th class="form-search__label required">Date Of Birth</th>
 				<td class="form-search__input-wrapper">
-					<%= form.date_field :dob, class:"form-input" %>
+					<%= form.date_field :dob, class:"form-input", :value => @user.dob %>
 					<% if @user.errors[:dob].any? %>
 						<span class="form__msg-warning mt-2">Date Of Birth <%= @user.errors[:dob][0] %>
 					<% end %>
@@ -70,7 +52,7 @@
 			<tr>
 				<th class="form-search__label required">Gender</th>
 				<td class="form-search__input-wrapper">
-					<%= form.select(:gender, options_for_select(Constants::TYPES), {}, {:class => "form-input rect-select"})%>
+					<%= form.select(:gender, options_for_select(Constants::TYPES, selected: @user.gender.to_i), {}, {:class => "form-input rect-select"})%>
 					<% if @user.errors[:gender].any? %>
 						<span class="form__msg-warning mt-2">Gender <%= @user.errors[:gender][0] %>
 					<% end %>
@@ -79,7 +61,7 @@
 			<tr>
 				<th class="form-search__label required">Role</th>
 				<td class="form-search__input-wrapper">
-					<%= form.select(:role, options_for_select([["Admin", "0"], ["User", "1"]]), {}, {:class => "form-input rect-select"})%>
+					<%= form.select(:role, options_for_select([["Admin", "0"], ["User", "1"]], selected: @user.role.to_i), {}, {:class => "form-input rect-select"})%>
 					<% if @user.errors[:role].any? %>
 						<span class="form__msg-warning mt-2">Role <%= @user.errors[:role][0] %>
 					<% end %>
@@ -91,6 +73,6 @@
 	</table>
 	<div class="btn-form__wrapper">
 		<%= link_to 'Back', users_path , class:"btn-cancel" %>
-		<%= submit_tag ("Create"), class: 'btn-submit' %>
+		<%= submit_tag ("Update"), class: 'btn-submit' %>
 	</div>
 <% end %>

@@ -1,4 +1,4 @@
 class PostRepository
-    class << self
-    end
+  class << self
+  end
 end

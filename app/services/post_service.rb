@@ -1,5 +1,4 @@
 class PostService
-    class << self
-
-    end
+  class << self
+  end
 end

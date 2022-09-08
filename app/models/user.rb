@@ -1,12 +1,13 @@
 class User < ApplicationRecord
-    before_save :email_downcase
-    private
+  has_secure_password
 
-    def email_downcase
-        self.email = email.downcase
-    end
+  before_save :email_downcase
 
-    def self.search(search)
-        where('name LIKE ?', "%#{search}%")
-    end
+  validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'Invalid email' }
+
+  private
+
+  def email_downcase
+    self.email = email.downcase
+  end
 end

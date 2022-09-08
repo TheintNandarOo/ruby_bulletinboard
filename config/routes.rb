@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'login/login'
+  get 'login', to: 'login#login'
+  post 'login', to: 'login#userLogin'
+  get 'logout', to: 'login#logout'
   get 'posts/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

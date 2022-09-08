@@ -1,0 +1,45 @@
+<header class="user-header container-lg">
+	<p class="header">User Detail</p>
+</header>
+<div class="form-container container-lg">
+	<div class="form-sec">
+		<table class="form-table">
+			<tr>
+				<td class="title">Name</td>
+				<td class="readonly"><%= @user.name  %></td>
+			</tr>
+			<tr>
+				<td class="title">Email</td>
+				<td class="readonly"><%= @user.email  %></td>
+			</tr>
+			<tr>
+				<td class="title">Address</td>
+				<td class="readonly"><%= @user.address %></td>
+			</tr>
+			<tr>
+				<td class="title">Phone</td>
+				<td class="readonly"><%= @user.phone %></td>
+			</tr>
+			<tr>
+				<td class="title">Role</td>
+				<td class="readonly"><%= @user.role == 0 ? 'Admin' : 'User' %></td>
+			</tr>
+			<tr>
+				<td class="title">Date of Birth</td>
+				<td class="readonly"><%= @user.dob.strftime('%Y/%m/%d') %></td>
+			</tr>
+			<tr>
+				<td class="title">Gender</td>
+				<td class="readonly"><%= @user.gender == 0 ? 'Male' : 'Female' %></td>
+			</tr>
+			<tr>
+				<td class="title">Join Date</td>
+				<td class="readonly"><%= @user.created_at.strftime('%Y/%m/%d') %></td>
+			</tr>
+		</table>
+		<div class="btn-form__wrapper">
+			<%= link_to 'Back', users_path , class:"btn-cancel" %>
+			<%= link_to '<button type="button" class="btn-submit">Edit</button>'.html_safe, edit_user_path %>
+		</div>
+	</div>
+</div>

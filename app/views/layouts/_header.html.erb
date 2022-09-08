@@ -1,0 +1,21 @@
+<section class="nav">
+  <div class="nav-content container-xl">
+    <div class="logo">
+      <a class="navbar-brand" href="#">BulletinBoard</a>
+    </div>
+    <div class="nav-menu-wrapper">
+      <ul class="nav-menu">
+        <li class="dropdown">
+          <div class="dd-content">
+            <% if @current_user.present? %>
+              <a href="/users/<%= @current_user.id %>"><%= @current_user.name %></a>
+            <% end %>
+            <%= link_to "All Users", users_path %>
+            <%= link_to "Create User", new_user_path %>
+            <%= link_to "Logout", logout_path %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

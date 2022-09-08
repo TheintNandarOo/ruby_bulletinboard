@@ -1,2 +1,25 @@
-<h1>Login#login</h1>
-<p>Find me in app/views/login/login.html.erb</p>
+<header class="user-header container-lg">
+	<p class="header">User Login</p>
+</header>
+<div class="w-35 mx-auto">  
+	<%= form_tag login_path do %> 
+		<div class="login-form">
+			<div class="w-50 mx-auto my-3">
+				<label for="username", class="form-label">Email</label>
+				<%= text_field_tag :email, params[:email], class: 'form-input full-width my-2', placeholder: 'Enter Your Email' %>
+			</div>
+			<div class="w-50 my-3">
+				<label for="password", class="form-label">Password</label>
+				<%= password_field_tag :password, params[:password], class: 'form-input full-width my-2', placeholder: 'Enter Your Password' %>
+			</div>
+			<%= submit_tag ("Login"), class: 'btn-submit mx-0' %>
+		</div>
+	</form>
+	<div class="login-form__reg-third w-81 mx-auto text-center">
+		<p class="mb-4 mt-1">
+			<span class="text-muted">Not a member?</span>
+			<%= link_to "Sign up", new_user_path %>
+		</p>
+	</div>
+	<% end %>
+</div>
